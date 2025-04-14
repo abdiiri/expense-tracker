@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: sans-serif;
@@ -13,20 +14,20 @@ body {
 .header {
   background-color: #ffffff;
   padding: 20px;
-  text-align: left;
+  text-align: center;
 }
 
 .content {
   display: flex;
   flex: 1;
-  padding: 20px;
+  padding: 40px;
 }
 
 .add-expense-section {
   width: 300px;
   margin-right: 20px;
   background-color: #ffffff;
-  padding: 20px;
+  padding: 30px;
 }
 
 .expenses-section {
@@ -58,7 +59,14 @@ body {
   margin-top: 20px;
 }
 
-.expense-table th,
+.expense-table th {
+  background-color: #e0f7fa;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  font-weight: bold;
+}
+
 .expense-table td {
   border: 1px solid #ddd;
   padding: 8px;
@@ -70,4 +78,6 @@ body {
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

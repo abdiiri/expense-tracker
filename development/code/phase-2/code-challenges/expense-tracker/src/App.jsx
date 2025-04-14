@@ -52,7 +52,7 @@ function App() {
     <div className="app-container">
       <div className="header">
         <h1>Expense Tracker</h1>
-        <p>Everything instead of your finances and life Network</p>
+        <p>Manage your finances</p>
       </div>
 
       <div className="content">
