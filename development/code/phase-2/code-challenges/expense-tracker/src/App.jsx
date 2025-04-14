@@ -1,33 +1,71 @@
-import { useState } from "react";
-import ExpenseForm from "./components/ExpenseForm";
+import React, { useState } from "react";
 import ExpenseTable from "./components/ExpenseTable";
+import ExpenseForm from "./components/ExpenseForm";
 import SearchBar from "./components/SearchBar";
-import "./styles.css";
-
+import "./App.css";
 
 function App() {
   const [expenses, setExpenses] = useState([
-    { id: 1, description: "Coffee", amount: 3.5, category: "Food" },
-    { id: 2, description: "Books", amount: 25.0, category: "Education" },
-    { id: 3, description: "Internet", amount: 45.0, category: "Utilities" },
+    {
+      id: 1,
+      description: "Liquid Refreshment",
+      amount: 10,
+      category: "Food",
+      date: "2025-04-28",
+    },
+    {
+      id: 2,
+      description: "MLC Tokens",
+      amount: 2000,
+      category: "Personal",
+      date: "2025-04-27",
+    },
+    {
+      id: 3,
+      description: "Bus Token",
+      amount: 300,
+      category: "Personal",
+      date: "2025-04-27",
+    },
+    {
+      id: 4,
+      description: "Buy Book",
+      amount: 1000,
+      category: "Goods",
+      date: "2025-04-27",
+    },
   ]);
 
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleAddExpense = (newExpense) => {
+  const addExpense = (newExpense) => {
     setExpenses([...expenses, { ...newExpense, id: Date.now() }]);
   };
 
-  const filteredExpenses = expenses.filter((expense) =>
-    expense.description.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredExpenses = expenses.filter(
+    (expense) =>
+      expense.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      expense.category.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
-    <div className="App">
-      <h1>Expense Tracker</h1>
-      <SearchBar searchTerm={searchTerm} onSearch={setSearchTerm} />
-      <ExpenseForm onAddExpense={handleAddExpense} />
-      <ExpenseTable expenses={filteredExpenses} />
+    <div className="app-container">
+      <div className="header">
+        <h1>Expense Tracker</h1>
+        <p>Everything instead of your finances and life Network</p>
+      </div>
+
+      <div className="content">
+        <div className="add-expense-section">
+          <h2>Add Expense</h2>
+          <ExpenseForm addExpense={addExpense} />
+        </div>
+
+        <div className="expenses-section">
+          <SearchBar setSearchTerm={setSearchTerm} />
+          <ExpenseTable expenses={filteredExpenses} />
+        </div>
+      </div>
     </div>
   );
 }

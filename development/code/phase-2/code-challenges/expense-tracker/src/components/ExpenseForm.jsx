@@ -1,47 +1,50 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import "../App.css";
 
-function ExpenseForm({ onAddExpense }) {
-  const [formData, setFormData] = useState({
-    description: "",
-    amount: "",
-    category: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+function ExpenseForm({ addExpense }) {
+  const [description, setDescription] = useState("");
+  const [amount, setAmount] = useState("");
+  const [category, setCategory] = useState("");
+  const [date, setDate] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.description || !formData.amount || !formData.category) return;
-    onAddExpense({ ...formData, amount: parseFloat(formData.amount) });
-    setFormData({ description: "", amount: "", category: "" });
+    if (description && amount && category && date) {
+      addExpense({ description, amount: parseFloat(amount), category, date });
+      setDescription("");
+      setAmount("");
+      setCategory("");
+      setDate("");
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="expense-form">
       <input
         type="text"
-        name="description"
-        placeholder="Description"
-        value={formData.description}
-        onChange={handleChange}
+        placeholder="Expense Name"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
       />
       <input
         type="number"
-        name="amount"
         placeholder="Amount"
-        value={formData.amount}
-        onChange={handleChange}
+        value={amount}
+        onChange={(e) => setAmount(e.target.value)}
       />
       <input
         type="text"
-        name="category"
         placeholder="Category"
-        value={formData.category}
-        onChange={handleChange}
+        value={category}
+        onChange={(e) => setCategory(e.target.value)}
       />
-      <button type="submit">Add Expense</button>
+      <input
+        type="date"
+        placeholder="Date"
+        value={date}
+        onChange={(e) => setDate(e.target.value)}
+      />
+      <button type="submit">Submit</button>
     </form>
   );
 }

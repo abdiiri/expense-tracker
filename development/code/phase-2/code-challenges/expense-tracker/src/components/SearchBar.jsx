@@ -1,10 +1,13 @@
-function SearchBar({ searchTerm, onSearch }) {
+import React from "react";
+import "../App.css";
+
+function SearchBar({ setSearchTerm }) {
   return (
     <input
       type="text"
       placeholder="Search expenses..."
-      value={searchTerm}
-      onChange={(e) => onSearch(e.target.value)}
+      onChange={(e) => setSearchTerm(e.target.value)}
+      className="search-bar"
     />
   );
 }
