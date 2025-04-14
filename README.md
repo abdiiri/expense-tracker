@@ -33,7 +33,11 @@ This is a simple Expense Tracker application built with React. It allows users t
     ```bash
     npm start
     ```
-
-5.  **Open your browser and navigate to `http://localhost:3000`**
-
 ## Project Structure
+expense-tracker/
+├── src/
+│   ├── App.js           # Main application component
+│   ├── App.css          # Application styles
+│   ├── ExpenseForm.js   # Form for adding expenses
+│   ├── ExpenseTable.js  # Table displaying expenses
+│   ├── SearchBar.js     # Search bar component
