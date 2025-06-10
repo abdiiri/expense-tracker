@@ -1,41 +1,35 @@
-# Expense Tracker
+# 💰 Expense Tracker App
 
-This is a simple Expense Tracker application built with React. It allows users to add, view, and search expenses.
+A simple and interactive web app for tracking your daily expenses. Built using HTML, CSS, and JavaScript to help users manage their finances in a clean and user-friendly interface.
 
-## Features
+## 🚀 Features
 
--   **Add Expenses:** Users can add new expenses with descriptions, amounts, categories, and dates.
--   **View Expenses:** Displays a table of all expenses.
--   **Search Expenses:** Users can filter expenses by description or category.
+- Add new expenses with name and amount
+- Instant display of added expenses
+- Easy-to-use input form
+- Responsive and beginner-friendly UI
 
-## Getting Started
+## 🛠️ Technologies Used
 
-1.  **Clone the repository:**
+- HTML5
+- CSS3
+- JavaScript (DOM Manipulation)
 
-    ```bash
-    git clone <repository_url>
-    ```
+## 📸 Screenshot
 
-2.  **Navigate to the project directory:**
+![Expense Tracker Screenshot](![image](https://github.com/user-attachments/assets/9774ac6c-e949-445d-8c04-d3a6cb52b9fd)
+)
 
-    ```bash
-    cd expense-tracker
-    ```
+## 🌐 Live Demo
 
-3.  **Install dependencies:**
+[View Live Project Here](https:// https://github.com/abdiiri/expense-tracker.git)  
+> (You can deploy with GitHub Pages — I can show you how if needed)
 
-    ```bash
-    npm install
-    ```
+## 📁 How to Run Locally
 
-4.  **Start the development server:**
-
-    ```bash
-    npm start
-    ```
-## Project Structure
-expense-tracker/
-├── src/
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/abdiiri/expense-tracker.git
 │   ├── App.js           # Main application component
 │   ├── App.css          # Application styles
 │   ├── ExpenseForm.js   # Form for adding expenses
